@@ -1,12 +1,41 @@
 {
-  "name": "mcp-subtitle-practice",
+  "name": "mcp-audio-extractor",
   "version": "1.0.0",
-  "description": "MCP learning project - video subtitle extraction",
+  "description": "MCP server for extracting audio from video URLs (YouTube, Bilibili, etc.) using yt-dlp",
   "type": "module",
+  "main": "dist/server/index.js",
+  "bin": {
+    "mcp-audio-extractor": "dist/server/index.js"
+  },
   "scripts": {
     "server": "tsx src/server/index.ts",
     "client": "tsx src/client/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "audio",
+    "video",
+    "youtube",
+    "bilibili",
+    "yt-dlp",
+    "extractor",
+    "cline"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamslin007/mcp-audio-video--extractor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yamslin007/mcp-audio-video--extractor/issues"
+  },
+  "homepage": "https://github.com/yamslin007/mcp-audio-video--extractor#readme",
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
