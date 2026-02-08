@@ -58,26 +58,6 @@ Edit `claude_desktop_config.json`:
 }
 ```
 
-## Optional: Bilibili Support
-
-For Bilibili video support (especially member-only content), add the SESSDATA environment variable:
-
-```json
-{
-  "mcpServers": {
-    "audio-extractor": {
-      "command": "npx",
-      "args": ["-y", "mcp-audio-extractor"],
-      "env": {
-        "BILIBILI_SESSDATA": "user_provided_sessdata"
-      }
-    }
-  }
-}
-```
-
-Ask the user to provide their Bilibili SESSDATA if they need Bilibili support.
-
 ## Verification
 
 After configuration, the `extract_audio` tool should be available with these parameters:
@@ -89,5 +69,4 @@ After configuration, the `extract_audio` tool should be available with these par
 
 1. **"yt-dlp not found"**: Install yt-dlp and ensure it's in PATH
 2. **"ffmpeg not found"**: Install ffmpeg for audio format conversion
-3. **Bilibili 403 errors**: Need valid SESSDATA cookie
-4. **Permission errors**: Ensure output directory is writable
+3. **Permission errors**: Ensure output directory is writable

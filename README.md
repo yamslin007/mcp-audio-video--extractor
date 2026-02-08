@@ -11,7 +11,7 @@ A Model Context Protocol (MCP) server that extracts audio from video URLs using 
 - Extract audio from YouTube, Bilibili, and other video platforms
 - Multiple output formats: MP3, M4A, AAC, OPUS, WAV, FLAC
 - Best audio quality extraction
-- Bilibili authentication support via SESSDATA cookie
+- Supports 1000+ sites via yt-dlp
 
 ## Prerequisites
 
@@ -52,10 +52,7 @@ Add to your MCP settings configuration:
   "mcpServers": {
     "audio-extractor": {
       "command": "npx",
-      "args": ["-y", "mcp-audio-extractor"],
-      "env": {
-        "BILIBILI_SESSDATA": "your_sessdata_here"
-      }
+      "args": ["-y", "mcp-audio-extractor"]
     }
   }
 }
@@ -69,10 +66,7 @@ Or if you prefer to clone and run locally:
     "audio-extractor": {
       "command": "npx",
       "args": ["tsx", "src/server/index.ts"],
-      "cwd": "/path/to/mcp-audio-extractor",
-      "env": {
-        "BILIBILI_SESSDATA": "your_sessdata_here"
-      }
+      "cwd": "/path/to/mcp-audio-video--extractor"
     }
   }
 }
@@ -116,19 +110,6 @@ File: ./output/Never Gonna Give You Up.mp3
 Format: mp3
 Duration: 3:32
 ```
-
-## Environment Variables
-
-| Variable | Description |
-|----------|-------------|
-| `BILIBILI_SESSDATA` | (Optional) Bilibili authentication cookie for accessing member-only videos |
-
-### Getting Bilibili SESSDATA
-
-1. Log in to bilibili.com in your browser
-2. Open Developer Tools (F12)
-3. Go to Application > Cookies > bilibili.com
-4. Find and copy the `SESSDATA` value
 
 ## Development
 
