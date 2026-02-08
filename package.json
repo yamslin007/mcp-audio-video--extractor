@@ -1,0 +1,22 @@
+{
+  "name": "mcp-subtitle-practice",
+  "version": "1.0.0",
+  "description": "MCP learning project - video subtitle extraction",
+  "type": "module",
+  "scripts": {
+    "server": "tsx src/server/index.ts",
+    "client": "tsx src/client/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.4.0",
+    "openai": "^4.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
